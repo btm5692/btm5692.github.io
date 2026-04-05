@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="공지사항과 갤러리를 통해 해남유스호스텔의 소식을 확인하세요." />
+    <title>커뮤니티 | 해남유스호스텔</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Pretendard', 'system-ui', 'sans-serif'], heading: ['Outfit', 'system-ui', 'sans-serif'] },
+            colors: {
+              border: 'hsl(30 15% 85%)',
+              background: 'hsl(40 20% 96%)',
+              foreground: '#474b53',
+              card: { DEFAULT: 'hsl(40 20% 98%)', foreground: '#474b53' },
+              primary: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              secondary: { DEFAULT: 'rgb(39 141 159 / 0.1)', foreground: 'hsl(30 40% 20%)' },
+              muted: { DEFAULT: 'hsl(35 15% 90%)', foreground: '#666666' },
+              accent: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              destructive: { DEFAULT: 'hsl(0 84.2% 60.2%)', foreground: 'hsl(0 0% 98%)' },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-background antialiased">
+    <div id="site-header"></div>
+    <main id="swup" class="flex-grow">
+      <section class="relative h-[60vh] flex items-center justify-center overflow-hidden" aria-labelledby="community-hero-title">
+        <div class="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=1920&amp;q=80" alt="커뮤니티" class="w-full h-full object-cover" width="1920" height="1080" />
+          <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
+        </div>
+        <div class="relative z-10 mt-16 px-6 text-center text-white">
+          <span class="mb-8 block text-sm font-bold uppercase tracking-widest text-accent" data-aos="fade-up">Community</span>
+          <h1 id="community-hero-title" class="mb-6 text-5xl font-heading font-bold tracking-tight md:text-7xl" data-aos="fade-up" data-aos-delay="60">커뮤니티</h1>
+          <p class="mx-auto max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl" data-aos="fade-up" data-aos-delay="120">
+            해남유스호스텔의 새로운 소식과 특별한 순간들을 공지사항과 갤러리에서 확인해보세요.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-background py-20" aria-label="공지 및 갤러리">
+        <div class="container mx-auto max-w-5xl px-6">
+          <div class="mb-16 flex justify-center border-b border-border" role="tablist" aria-label="커뮤니티 탭 전환">
+            <button
+              type="button"
+              id="tab-notice"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-notice"
+              data-community-tab="notice"
+              class="community-tab relative flex items-center gap-2 px-8 py-4 text-lg font-bold font-heading text-primary transition-all"
+            >
+              <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              공지사항
+              <span class="tab-indicator absolute bottom-0 left-0 right-0 h-1 rounded-t-full bg-accent" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button"
+              id="tab-gallery"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-gallery"
+              data-community-tab="gallery"
+              class="community-tab relative flex items-center gap-2 px-8 py-4 text-lg font-bold font-heading text-muted-foreground transition-all hover:text-foreground"
+            >
+              <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              갤러리
+              <span class="tab-indicator absolute bottom-0 left-0 right-0 hidden h-1 rounded-t-full bg-accent" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div id="panel-notice" role="tabpanel" aria-labelledby="tab-notice" class="space-y-6">
+            <article class="rounded-2xl border border-accent/50 bg-accent/5 p-6 transition-all hover:shadow-md md:p-8" data-aos="fade-up">
+              <div class="mb-4 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+                <div class="flex flex-wrap items-center gap-3">
+                  <span class="inline-flex items-center gap-1 rounded bg-accent px-2 py-1 text-xs font-bold text-white">
+                    <svg class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 9.7-8 11-4.5-1.3-8-6-8-11V6l8-4z"/></svg>
+                    공지
+                  </span>
+                  <h3 class="text-xl font-bold text-foreground md:text-2xl">2024 여름 항공 캠프 접수 안내</h3>
+                </div>
+                <div class="flex items-center shrink-0 text-sm font-medium text-muted-foreground">
+                  <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+                  2024-05-15
+                </div>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">여름 항공 캠프 참가 신청이 시작되었습니다. 조기 접수 시 단체 특별 혜택도 함께 제공됩니다.</p>
+              <div class="mt-6 flex justify-end">
+                <a href="#" class="inline-flex items-center gap-1 font-medium text-primary hover:underline" data-no-swup>자세히 보기</a>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-border bg-white p-6 transition-all hover:border-primary/20 hover:shadow-md md:p-8" data-aos="fade-up">
+              <div class="mb-4 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+                <h3 class="text-xl font-bold text-foreground md:text-2xl">6월 시설 점검 안내</h3>
+                <div class="flex items-center shrink-0 text-sm font-medium text-muted-foreground">
+                  <svg class="mr-2 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/></svg>
+                  2024-05-10
+                </div>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">6월 5일 오전 10시부터 오후 2시까지 메인홀 정기 점검이 진행될 예정입니다. 이용에 참고 부탁드립니다.</p>
+              <div class="mt-6 flex justify-end">
+                <a href="#" class="inline-flex items-center gap-1 font-medium text-primary hover:underline" data-no-swup>자세히 보기</a>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-border bg-white p-6 transition-all hover:shadow-md md:p-8" data-aos="fade-up">
+              <div class="mb-4 flex flex-col justify-between gap-4 md:flex-row md:items-center">
+                <h3 class="text-xl font-bold text-foreground md:text-2xl">신규 지역 체험 프로그램 안내</h3>
+                <div class="flex items-center shrink-0 text-sm font-medium text-muted-foreground">2024-05-01</div>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">지역 해설사와 함께 두륜산 일대를 탐방하는 새로운 체험 프로그램이 추가되었습니다.</p>
+              <div class="mt-6 flex justify-end">
+                <a href="program.html" class="inline-flex items-center gap-1 font-medium text-primary hover:underline" data-swup-link>프로그램 보기</a>
+              </div>
+            </article>
+
+            <div class="mt-12 flex justify-center">
+              <button type="button" class="rounded-full border border-border bg-background px-8 py-3 font-medium transition-colors hover:bg-secondary/40" data-no-swup>더 보기</button>
+            </div>
+          </div>
+
+          <div id="panel-gallery" role="tabpanel" aria-labelledby="tab-gallery" class="hidden">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <a href="https://images.unsplash.com/photo-1441974231531-c6227db76b34?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b34?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="자연 풍경" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" width="800" height="600" loading="lazy" />
+                <span class="sr-only">이미지를 새 창에서 보기</span>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100">
+                  <span class="font-medium text-white">보기</span>
+                </div>
+              </a>
+              <a href="https://images.unsplash.com/photo-1631049035630-c8568e07d755?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1631049035630-c8568e07d755?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="호스텔 공간" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" width="800" height="600" loading="lazy" />
+                <span class="sr-only">이미지를 새 창에서 보기</span>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100">
+                  <span class="font-medium text-white">보기</span>
+                </div>
+              </a>
+              <a href="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="항공 체험" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" width="800" height="600" loading="lazy" />
+                <span class="sr-only">이미지를 새 창에서 보기</span>
+                <div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100">
+                  <span class="font-medium text-white">보기</span>
+                </div>
+              </a>
+            </div>
+            <div class="mt-12 flex justify-center">
+              <button type="button" class="rounded-full border border-border bg-background px-8 py-3 font-medium transition-colors hover:bg-secondary/40" data-no-swup>이미지 더 보기</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

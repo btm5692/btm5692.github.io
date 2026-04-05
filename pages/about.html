@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="해남유스호스텔 소개와 교육 목표, 7대 운영 방향을 안내합니다." />
+    <title>소개 | 해남유스호스텔</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Pretendard', 'system-ui', 'sans-serif'],
+              heading: ['Outfit', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              border: 'hsl(30 15% 85%)',
+              background: 'hsl(40 20% 96%)',
+              foreground: '#474b53',
+              card: { DEFAULT: 'hsl(40 20% 98%)', foreground: '#474b53' },
+              primary: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              secondary: { DEFAULT: 'rgb(39 141 159 / 0.1)', foreground: 'hsl(30 40% 20%)' },
+              muted: { DEFAULT: 'hsl(35 15% 90%)', foreground: '#666666' },
+              accent: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              destructive: { DEFAULT: 'hsl(0 84.2% 60.2%)', foreground: 'hsl(0 0% 98%)' },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen font-sans bg-background text-foreground antialiased selection:bg-accent selection:text-white">
+    <div id="site-header"></div>
+    <main id="swup" class="flex-grow">
+      <section class="relative h-[60vh] flex items-center justify-center overflow-hidden" aria-labelledby="about-hero-title">
+        <div class="absolute inset-0 z-0">
+          <img
+            src="/assets/images/img_about_bg.jpg"
+            alt="두륜산도립공원 풍경"
+            class="h-full w-full object-cover"
+            width="1920"
+            height="1080"
+          />
+          <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
+        </div>
+        <div class="relative z-10 mt-16 px-6 text-center text-white">
+          <span class="mb-8 block text-sm font-bold uppercase tracking-widest text-accent" data-aos="fade-up">About</span>
+          <h1 id="about-hero-title" class="mb-[1.5rem] text-5xl font-heading font-bold tracking-tight md:text-7xl" data-aos="fade-up">
+            유스호스텔 소개
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl" data-aos="fade-up" data-aos-delay="80">
+            대흥사와 두륜산도립공원 인근의 청정한 자연 속에 자리한 해남유스호스텔을 소개합니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-background py-24" aria-labelledby="philosophy-title">
+        <div class="container mx-auto max-w-4xl px-6 text-center">
+          <h2 id="philosophy-title" class="mb-8 text-3xl font-heading font-bold text-foreground text-primary md:text-4xl" data-aos="fade-up">운영 철학</h2>
+          <p class="mb-6 text-lg leading-relaxed text-muted-foreground" data-aos="fade-up" data-aos-delay="50">
+            해남유스호스텔은 단순한 숙박 공간을 넘어 청소년의 성장과 인성 함양을 위한 배움의 공간입니다. 아름다운 두륜산도립공원 속에 자리한 이곳은 바쁜 일상에서 잠시 벗어나 자연과 자신, 그리고 서로를 다시 마주할 수 있는 쉼과 경험의 장을 제공합니다.
+          </p>
+          <p class="text-lg leading-relaxed text-muted-foreground" data-aos="fade-up" data-aos-delay="100">
+            대흥사의 고요한 기운이 머무는 환경 속에서, 해남유스호스텔은 다양한 체험 프로그램과 공동체 생활을 통해 성장과 탐구, 그리고 오래 기억될 추억을 만들어갈 수 있도록 설계되었습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-secondary/10 py-24" aria-labelledby="goals-title">
+        <div class="container mx-auto px-6">
+          <div class="mx-auto mb-16 max-w-3xl text-center">
+            <h2 id="goals-title" class="mb-6 text-3xl font-heading font-bold text-foreground text-primary md:text-4xl" data-aos="fade-up">교육 목표</h2>
+            <p class="text-lg text-muted-foreground" data-aos="fade-up" data-aos-delay="60">
+              해남유스호스텔의 프로그램은 청소년의 전인적 성장을 위한 네 가지 핵심 가치 위에 구성되어 있습니다.
+            </p>
+          </div>
+          <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
+            <div class="flex gap-6 rounded-2xl border border-border bg-background p-8 shadow-sm transition-shadow hover:shadow-md" data-aos="fade-up">
+              <div class="text-5xl font-heading font-bold text-accent/20">01</div>
+              <div>
+                <h3 class="mb-3 text-xl font-bold">건강한 몸과 마음</h3>
+                <p class="leading-relaxed text-muted-foreground">야외 활동과 체험을 통해 신체 건강과 정서적 회복력을 함께 기릅니다.</p>
+              </div>
+            </div>
+            <div class="flex gap-6 rounded-2xl border border-border bg-background p-8 shadow-sm transition-shadow hover:shadow-md" data-aos="fade-up" data-aos-delay="80">
+              <div class="text-5xl font-heading font-bold text-accent/20">02</div>
+              <div>
+                <h3 class="mb-3 text-xl font-bold">협동 정신</h3>
+                <p class="leading-relaxed text-muted-foreground">공동체 안에서 팀워크와 상호 배려의 가치를 자연스럽게 배웁니다.</p>
+              </div>
+            </div>
+            <div class="flex gap-6 rounded-2xl border border-border bg-background p-8 shadow-sm transition-shadow hover:shadow-md" data-aos="fade-up" data-aos-delay="100">
+              <div class="text-5xl font-heading font-bold text-accent/20">03</div>
+              <div>
+                <h3 class="mb-3 text-xl font-bold">리더십 역량</h3>
+                <p class="leading-relaxed text-muted-foreground">스스로 책임을 다하고 다른 사람을 이끌 수 있는 태도와 능력을 키웁니다.</p>
+              </div>
+            </div>
+            <div class="flex gap-6 rounded-2xl border border-border bg-background p-8 shadow-sm transition-shadow hover:shadow-md" data-aos="fade-up" data-aos-delay="120">
+              <div class="text-5xl font-heading font-bold text-accent/20">04</div>
+              <div>
+                <h3 class="mb-3 text-xl font-bold">자연 감수성</h3>
+                <p class="leading-relaxed text-muted-foreground">환경과 자연의 소중함을 느끼고 이를 지켜가는 자세를 배웁니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-background py-24" aria-labelledby="directions-title">
+        <div class="container mx-auto px-6">
+          <div class="mx-auto mb-16 max-w-3xl text-center">
+            <h2 id="directions-title" class="mb-6 text-3xl font-heading font-bold text-foreground text-primary md:text-4xl" data-aos="fade-up">7대 운영 방향</h2>
+            <p class="text-lg text-muted-foreground" data-aos="fade-up" data-aos-delay="60">
+              해남유스호스텔은 다음의 일곱 가지 핵심 가치를 바탕으로 프로그램과 공동체 생활을 운영하며, 의미 있는 성장의 경험을 만들어갑니다.
+            </p>
+          </div>
+          <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20" data-aos="fade-up">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">안전</h3>
+              <p class="leading-relaxed text-muted-foreground">모든 활동에서 신체적·정서적 안전을 가장 우선으로 생각합니다.</p>
+            </div>
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20" data-aos="fade-up" data-aos-delay="40">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><path d="M4 6h1v4M4 10h2M6 18H5v-4M4 14h2"/><path d="M6 4H4v2M6 20H4v-2"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">질서</h3>
+              <p class="leading-relaxed text-muted-foreground">조화로운 생활 환경을 위해 기본 질서와 규칙을 함께 세워갑니다.</p>
+            </div>
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20" data-aos="fade-up" data-aos-delay="80">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">예절</h3>
+              <p class="leading-relaxed text-muted-foreground">서로를 존중하고 배려하는 태도와 바른 생활 습관을 기릅니다.</p>
+            </div>
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20" data-aos="fade-up" data-aos-delay="120">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">체험</h3>
+              <p class="leading-relaxed text-muted-foreground">직접 참여하고 몸으로 익히는 체험 중심의 배움을 지향합니다.</p>
+            </div>
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20" data-aos="fade-up" data-aos-delay="160">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">공동체</h3>
+              <p class="leading-relaxed text-muted-foreground">함께 생활하고 협력하며 더불어 살아가는 가치를 배웁니다.</p>
+            </div>
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20 xl:col-start-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.5 16.5c1.5 2 4 3.5 7.5 3.5s6-1.5 7.5-3.5"/><path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M3.5 9.5c1-2.5 3.5-4.5 8.5-4.5s7.5 2 8.5 4.5"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">진취성</h3>
+              <p class="leading-relaxed text-muted-foreground">새로운 일에 도전하는 용기와 주도적인 태도를 북돋웁니다.</p>
+            </div>
+            <div class="rounded-2xl border border-secondary/20 bg-secondary/10 p-8 transition-colors hover:bg-secondary/20 md:col-start-2 lg:col-start-2 xl:col-start-4" data-aos="fade-up" data-aos-delay="240">
+              <div class="mb-6 inline-block rounded-full bg-background p-4 text-primary shadow-sm" aria-hidden="true">
+                <svg class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22v-8.5"/><path d="m9 15 3 3 3-3"/><path d="M5 12h2.5a5 5 0 0 1 4 4 4 4 0 0 1 4 4H19"/></svg>
+              </div>
+              <h3 class="mb-3 text-xl font-bold text-foreground">환경</h3>
+              <p class="leading-relaxed text-muted-foreground">자연을 아끼고 친환경적인 생활 태도를 실천하도록 돕습니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

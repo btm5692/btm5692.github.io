@@ -1,0 +1,646 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+/* 가로 스크롤·모바일 헤더/본문 정렬 깨짐 방지(vw·오버플로 흔한 원인) */
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'GangwonEducationTteontteon';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* 헤더: 모바일은 항상 0.5rem 패딩 · md+ 는 넉넉 → 스크롤 후 컴팩트 */
+#site-navbar {
+  width: 100%;
+  max-width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  overflow-x: hidden; /* 모바일에서 header 가로 오버플로 방지 */
+  transition:
+    padding-top 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    padding-bottom 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s ease;
+}
+
+#site-header {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+#site-navbar .navbar-inner,
+#mobile-menu-panel {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #site-navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  #site-navbar.header-compact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-nav-toggle,
+  #mobile-menu-toggle {
+    display: none !important;
+  }
+}
+
+/* 상단 로고: 이미지 로고(.nav-logo) 정렬/축소 */
+.nav-brand {
+  font-family: 'GangwonEducationTteontteon', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  font-weight: normal;
+  flex: 1 1 auto;
+  height: auto;
+  min-height: unset;
+  max-height: none;
+  overflow: hidden;
+}
+
+#site-navbar .nav-brand {
+  padding-top: 0;
+}
+
+.nav-logo {
+  display: block;
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#site-navbar.header-compact .nav-brand {
+  padding-top: 0;
+}
+
+@media (max-width: 767px) {
+  #site-navbar .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #site-navbar.menu-open {
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  #site-navbar.menu-open .nav-brand {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #site-navbar.menu-open #mobile-menu-toggle {
+    position: relative;
+    z-index: 130;
+    border-color: rgb(255 255 255 / 0.32);
+    background: transparent;
+    color: #fff;
+  }
+
+  #site-navbar .nav-brand {
+    max-width: calc(100vw - 5.5rem);
+  }
+
+  #site-navbar .nav-brand .nav-logo {
+    height: 20px;
+    max-width: 100%;
+  }
+
+  #site-navbar.header-compact .nav-brand .nav-logo {
+    height: 20px;
+    max-width: 100%;
+  }
+
+  #mobile-menu-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 120;
+    max-width: 100vw;
+    overflow-x: hidden;
+    border-bottom: 0;
+    background: #278d9f;
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity 0.32s ease,
+      visibility 0.32s ease;
+  }
+
+  #nav-mobile-slot {
+    display: flex;
+    min-height: 100dvh;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    overflow-x: hidden;
+    padding: 6.5rem 1.5rem 2rem;
+    transform: translateY(-18px);
+    opacity: 0;
+    transition:
+      transform 0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.28s ease;
+  }
+
+  #nav-mobile-slot a {
+    border-bottom: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  #nav-mobile-slot .book-cta {
+    margin-top: 0.75rem;
+    width: auto;
+    align-self: flex-start;
+    border: 1px solid rgb(255 255 255 / 0.28);
+    background: rgb(255 255 255 / 0.12);
+    padding: 0.9rem 1.4rem;
+    font-size: 1.05rem !important;
+    color: #fff;
+  }
+
+  #mobile-menu-panel.is-open,
+  #mobile-menu-panel.is-closing {
+    visibility: visible;
+  }
+
+  #mobile-menu-panel.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #mobile-menu-panel.is-open #nav-mobile-slot {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  #hero-title,
+  #swup h1 {
+    font-size: clamp(2.1rem, 8vw, 2.75rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  section[aria-labelledby='hero-title'] a[data-swup-link] {
+    height: 2.5rem !important;
+  }
+
+  #swup h2 {
+    font-size: clamp(1.8rem, 6.6vw, 2.2rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  #swup h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.35 !important;
+  }
+
+  #swup p,
+  #swup dd,
+  #swup li {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  #swup .text-lg {
+    font-size: 1rem !important;
+  }
+
+  #swup .text-base,
+  #nav-mobile-slot .book-cta {
+    font-size: 0.95rem !important;
+  }
+
+  #swup .text-sm {
+    font-size: 0.875rem !important;
+  }
+
+  #swup .text-xs {
+    font-size: 0.75rem !important;
+  }
+
+  #swup a.inline-flex,
+  #swup button,
+  #swup [role='button'] {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  #site-navbar .nav-brand .nav-logo {
+    height: 26px;
+  }
+
+  #site-navbar.header-compact .nav-brand .nav-logo {
+    height: 20px;
+  }
+}
+
+/* Swup 전환 (최소) */
+html.is-changing #swup {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#swup {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* 스크롤 인디케이터 (CSS만, React motion 대체) */
+@keyframes hero-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.hero-scroll-indicator {
+  animation: hero-scroll-hint 2s ease-in-out infinite;
+}
+
+/* 키보드 포커스 가시성 */
+:focus-visible {
+  outline: 2px solid hsl(80 25% 45%);
+  outline-offset: 2px;
+}
+
+/* Swiper 슬라이드 높이 예시 */
+.swiper-hero-thumb .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 메인 객실 티저: 카드 높이 맞춤 · 스와이프 인디케이터 */
+#home-rooms-swiper.swiper-rooms-teaser {
+  overflow: hidden;
+  width: 100%;
+}
+
+.swiper-rooms-teaser .swiper-slide {
+  height: auto;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.swiper-rooms-teaser .swiper-slide > article {
+  width: 100%;
+  min-height: 100%;
+}
+
+.swiper-rooms-teaser .swiper-pagination-bullet-active {
+  background-color: #278d9f;
+}
+
+/* 객실 티저: 이전/다음 — Swiper 밖 고정 배치(트랙 너비 = flex-1 + min-w-0 으로 3장 딱 맞춤) */
+.swiper-button-prev-rooms.swiper-rooms-nav,
+.swiper-button-next-rooms.swiper-rooms-nav {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  margin-top: 0;
+  transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  z-index: 10;
+  color: #278d9f;
+  background: hsl(40 20% 98% / 0.95);
+  border-radius: 9999px;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.12);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.swiper-button-prev-rooms.swiper-rooms-nav::after,
+.swiper-button-next-rooms.swiper-rooms-nav::after {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.swiper-button-prev-rooms.swiper-rooms-nav:hover,
+.swiper-button-next-rooms.swiper-rooms-nav:hover {
+  background: #278d9f;
+  color: #fff;
+  box-shadow: 0 4px 14px rgb(39 141 159 / 0.35);
+}
+
+.swiper-button-prev-rooms.swiper-button-disabled.swiper-rooms-nav,
+.swiper-button-next-rooms.swiper-button-disabled.swiper-rooms-nav {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  .swiper-button-prev-rooms.swiper-rooms-nav,
+  .swiper-button-next-rooms.swiper-rooms-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-button-prev-rooms.swiper-rooms-nav,
+  .swiper-button-next-rooms.swiper-rooms-nav {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .swiper-button-prev-rooms.swiper-rooms-nav::after,
+  .swiper-button-next-rooms.swiper-rooms-nav::after {
+    font-size: 1.25rem;
+  }
+}
+
+/* 히어로 타이틀 h1: 로고 글자체 동일 적용 */
+#hero-title,
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title,
+#rooms-benefits-title,
+#rooms-policy-title {
+  font-family: 'GangwonEducationTteontteon', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  word-break: keep-all;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  position: relative;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  color: inherit;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  text-wrap: balance;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  margin-top: 0;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  margin-bottom: 1.5rem;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  letter-spacing: -0.02em;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  line-height: 1.05;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  font-size: 3rem !important;
+}
+
+section[aria-labelledby='about-hero-title'] p,
+section[aria-labelledby='rooms-hero-title'] p,
+section[aria-labelledby='program-hero-title'] p,
+section[aria-labelledby='community-hero-title'] p,
+section[aria-labelledby='location-hero-title'] p {
+  font-size: 1.125rem !important;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  text-align: center;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  color: #fff;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  font-weight: 700;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  display: block;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  position: relative;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  z-index: 1;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  isolation: isolate;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  text-shadow: 0 2px 10px rgb(0 0 0 / 0.16);
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  max-width: 100%;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  text-transform: none;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  overflow-wrap: break-word;
+}
+
+#about-hero-title,
+#rooms-hero-title,
+#program-hero-title,
+#community-hero-title,
+#location-hero-title {
+  hyphens: none;
+}
+
+section[aria-labelledby='about-hero-title'] span[data-aos],
+section[aria-labelledby='rooms-hero-title'] span[data-aos],
+section[aria-labelledby='program-hero-title'] span[data-aos],
+section[aria-labelledby='community-hero-title'] span[data-aos],
+section[aria-labelledby='location-hero-title'] span[data-aos] {
+  color: #fde68a !important;
+}
+
+/* 메인 히어로 배경 크로스페이드 */
+.hero-bg-slideshow {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-bg-layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity var(--hero-bg-fade-ms, 1.4s) ease-in-out;
+  will-change: opacity;
+}
+
+.hero-bg-layer--active {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-layer {
+    transition: none;
+  }
+}
+
+/* h2: 로고 글자체와 동일 */
+h2.font-heading,
+h2 {
+  font-family: 'GangwonEducationTteontteon', 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (max-width: 767px) {
+  .footer-policy-list {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .footer-policy-list li {
+    white-space: nowrap;
+  }
+
+  .footer-policy-list li + li::before {
+    content: '|';
+    margin-right: 0.75rem;
+    color: rgb(255 255 255 / 0.4);
+  }
+}

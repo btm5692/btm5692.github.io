@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="객실안내와 시설안내를 통해 해남유스호스텔의 공간을 확인해보세요." />
+    <title>객실안내 | 해남유스호스텔</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Pretendard', 'system-ui', 'sans-serif'], heading: ['Outfit', 'system-ui', 'sans-serif'] },
+            colors: {
+              border: 'hsl(30 15% 85%)',
+              background: 'hsl(40 20% 96%)',
+              foreground: '#474b53',
+              card: { DEFAULT: 'hsl(40 20% 98%)', foreground: '#474b53' },
+              primary: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              secondary: { DEFAULT: 'rgb(39 141 159 / 0.1)', foreground: 'hsl(30 40% 20%)' },
+              muted: { DEFAULT: 'hsl(35 15% 90%)', foreground: '#666666' },
+              accent: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              destructive: { DEFAULT: 'hsl(0 84.2% 60.2%)', foreground: 'hsl(0 0% 98%)' },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-background text-foreground antialiased">
+    <div id="site-header"></div>
+    <main id="swup" class="flex-grow">
+      <section class="relative h-[60vh] flex items-center justify-center overflow-hidden" aria-labelledby="rooms-hero-title">
+        <div class="absolute inset-0 z-0">
+          <img src="/assets/images/img_rooms_bg.jpg" alt="객실 안내" class="h-full w-full object-cover" width="1920" height="1080" />
+          <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
+        </div>
+        <div class="relative z-10 mt-16 px-6 text-center text-white">
+          <span class="mb-8 block text-sm font-bold uppercase tracking-widest text-accent" data-aos="fade-up">Rooms</span>
+          <h1 id="rooms-hero-title" class="mb-6 text-5xl font-heading font-bold tracking-tight md:text-7xl" data-aos="fade-up" data-aos-delay="60">객실/시설안내</h1>
+          <p class="mx-auto max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl" data-aos="fade-up" data-aos-delay="120">새로운 인연을 만나고 싶은 여행자부터 프라이빗한 휴식을 원하는 분들까지, 모두를 위한 공간을 준비했습니다.</p>
+        </div>
+      </section>
+
+      <section class="bg-background py-20" aria-label="객실 및 시설 안내">
+        <div class="container mx-auto max-w-6xl px-6">
+          <div class="mb-16 flex justify-center border-b border-border" role="tablist" aria-label="객실 페이지 탭 전환">
+            <button type="button" id="tab-rooms-info" role="tab" aria-selected="true" aria-controls="panel-rooms-info" data-rooms-tab="rooms" class="community-tab relative flex items-center gap-2 px-8 py-4 font-heading text-lg font-bold text-primary transition-all">
+              <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 4v16"/></svg>
+              객실안내
+              <span class="tab-indicator absolute bottom-0 left-0 right-0 h-1 rounded-t-full bg-accent" aria-hidden="true"></span>
+            </button>
+            <button type="button" id="tab-facilities-info" role="tab" aria-selected="false" aria-controls="panel-facilities-info" data-rooms-tab="facilities" class="community-tab relative flex items-center gap-2 px-8 py-4 font-heading text-lg font-bold text-muted-foreground transition-all hover:text-foreground">
+              <svg class="h-5 w-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 21V9"/><path d="M15 21V13"/><path d="M3 9h18"/></svg>
+              시설안내
+              <span class="tab-indicator absolute bottom-0 left-0 right-0 hidden h-1 rounded-t-full bg-accent" aria-hidden="true"></span>
+            </button>
+          </div>
+
+          <div id="panel-rooms-info" role="tabpanel" aria-labelledby="tab-rooms-info" class="space-y-24">
+            <article class="flex flex-col items-center gap-12 md:flex-row" data-aos="fade-up">
+              <div class="relative h-[400px] w-full overflow-hidden rounded-3xl shadow-lg md:h-[500px] md:w-1/2">
+                <img src="/assets/images/img_room_a.jpg" alt="객실 A" class="h-full w-full object-cover" width="1200" height="800" />
+              </div>
+              <div class="w-full space-y-6 md:w-1/2">
+                <div class="inline-block rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">Rooms</div>
+                <h2 class="text-3xl font-heading font-bold text-foreground md:text-4xl">객실 A</h2>
+                <div class="flex items-center gap-2 text-muted-foreground"><svg class="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>최대 6인 이용</span></div>
+                <p class="text-lg leading-relaxed text-muted-foreground">편안한 휴식과 자연스러운 교류를 함께 즐길 수 있는 공간입니다. 프라이버시 커튼이 설치된 맞춤형 벙크베드로 보다 아늑하게 머무를 수 있습니다.</p>
+                <div>
+                  <h4 class="mb-4 font-bold text-foreground">객실 구성</h4>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>에어컨</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>TV</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>냉장고</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>옷장</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>드라이기</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>샤워실</span>
+                  </div>
+                </div>
+                <a href="#" class="hidden inline-flex rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90" data-no-swup>예약하기</a>
+              </div>
+            </article>
+
+            <article class="flex flex-col items-center gap-12 md:flex-row-reverse" data-aos="fade-up">
+              <div class="relative h-[400px] w-full overflow-hidden rounded-3xl shadow-lg md:h-[500px] md:w-1/2">
+                <img src="/assets/images/img_room_b.jpg" alt="객실 B" class="h-full w-full object-cover" width="1200" height="800" />
+              </div>
+              <div class="w-full space-y-6 md:w-1/2">
+                <div class="inline-block rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">Rooms</div>
+                <h2 class="text-3xl font-heading font-bold text-foreground md:text-4xl">객실 B</h2>
+                <div class="flex items-center gap-2 text-muted-foreground"><svg class="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span>최대 4인 이용</span></div>
+                <p class="text-lg leading-relaxed text-muted-foreground">보다 조용하고 아늑한 분위기를 원하는 분들을 위한 객실입니다. 여행 중에도 편안함과 안정감을 느낄 수 있도록 세심하게 구성했습니다.</p>
+                <div>
+                  <h4 class="mb-4 font-bold text-foreground">객실 구성</h4>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>에어컨</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>TV</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>냉장고</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>옷장</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>드라이기</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>샤워실</span>
+                  </div>
+                </div>
+                <a href="#" class="hidden inline-flex rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90" data-no-swup>예약하기</a>
+              </div>
+            </article>
+
+            <article class="flex flex-col items-center gap-12 md:flex-row" data-aos="fade-up">
+              <div class="relative h-[400px] w-full overflow-hidden rounded-3xl shadow-lg md:h-[500px] md:w-1/2">
+                <img src="/assets/images/img_room_c.jpg" alt="객실 C" class="h-full w-full object-cover" width="1200" height="800" />
+              </div>
+              <div class="w-full space-y-6 md:w-1/2">
+                <div class="inline-block rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">Rooms</div>
+                <h2 class="text-3xl font-heading font-bold text-foreground md:text-4xl">객실 C</h2>
+                <div class="flex items-center gap-2 text-muted-foreground"><svg class="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>최대 2인 이용</span></div>
+                <p class="text-lg leading-relaxed text-muted-foreground">커플이나 친구끼리 보다 프라이빗한 공간을 원하는 분들께 적합한 객실입니다. 호스텔의 활기와 호텔 같은 편안함을 함께 누릴 수 있습니다.</p>
+                <div>
+                  <h4 class="mb-4 font-bold text-foreground">객실 구성</h4>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>에어컨</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>TV</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>냉장고</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>옷장</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>드라이기</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>샤워실</span>
+                  </div>
+                </div>
+                <a href="#" class="hidden inline-flex rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90" data-no-swup>예약하기</a>
+              </div>
+            </article>
+            <article class="flex flex-col items-center gap-12 md:flex-row-reverse" data-aos="fade-up">
+              <div class="relative h-[400px] w-full overflow-hidden rounded-3xl shadow-lg md:h-[500px] md:w-1/2">
+                <img src="/assets/images/img_room_d.jpg" alt="객실 D" class="h-full w-full object-cover" width="1200" height="800" />
+              </div>
+              <div class="w-full space-y-6 md:w-1/2">
+                <div class="inline-block rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent">Rooms</div>
+                <h2 class="text-3xl font-heading font-bold text-foreground md:text-4xl">객실 D</h2>
+                <div class="flex items-center gap-2 text-muted-foreground"><svg class="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span>최대 4인 이용</span></div>
+                <p class="text-lg leading-relaxed text-muted-foreground">가족이나 친구 그룹이 함께 머물기에 충분히 넉넉한 공간입니다. 더블베드와 벙크베드가 함께 구성되어 실용적이고 편안합니다.</p>
+                <div>
+                  <h4 class="mb-4 font-bold text-foreground">객실 구성</h4>
+                  <div class="grid grid-cols-2 gap-x-4 gap-y-3">
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>에어컨</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>TV</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>냉장고</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>옷장</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>드라이기</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>샤워실</span>
+                    <span class="flex items-center gap-2 text-sm text-muted-foreground"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>싱크대</span>
+                  </div>
+                </div>
+                <a href="#" class="hidden inline-flex rounded-full bg-primary px-8 py-4 text-lg font-bold text-primary-foreground transition-colors hover:bg-primary/90" data-no-swup>예약하기</a>
+              </div>
+            </article>
+
+            <section class="mt-12 rounded-3xl bg-primary py-16 text-primary-foreground" aria-label="공통 제공 서비스">
+              <div class="px-6">
+                <div class="mb-10 text-center">
+                  <h3 id="rooms-benefits-title" class="text-2xl font-bold md:text-3xl" data-aos="fade-up">모든 객실 공통 제공</h3>
+                </div>
+                <div class="mx-auto grid max-w-4xl grid-cols-2 gap-8 text-center md:grid-cols-2 lg:grid-cols-4">
+                  <div class="flex flex-col items-center gap-3" data-aos="zoom-in">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    <span class="font-medium">고속 와이파이</span>
+                  </div>
+                  <div class="flex flex-col items-center gap-3" data-aos="zoom-in" data-aos-delay="120">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10 0V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2v-2"/></svg>
+                    <span class="font-medium">에어컨</span>
+                  </div>
+                  <div class="flex flex-col items-center gap-3" data-aos="zoom-in" data-aos-delay="160">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 4h10" />
+                      <path d="M12 4v6" />
+                      <path d="M7 10h10" />
+                      <path d="M8 14v1" />
+                      <path d="M12 14v2" />
+                      <path d="M16 14v1" />
+                      <path d="M6 18v1" />
+                      <path d="M10 18v2" />
+                      <path d="M14 18v1" />
+                      <path d="M18 18v2" />
+                    </svg>
+                    <span class="font-medium">샤워실</span>
+                  </div>
+                  <div class="flex flex-col items-center gap-3" data-aos="zoom-in" data-aos-delay="200">
+                    <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M7 7h7a3 3 0 0 1 0 6H9" />
+                      <path d="M7 7v10" />
+                      <path d="M7 12h6" />
+                      <path d="M14 13l3 4" />
+                      <path d="M5 17h4" />
+                    </svg>
+                    <span class="font-medium">드라이기</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="rounded-3xl border border-border bg-white p-8 shadow-sm md:p-10" aria-labelledby="rooms-policy-title" data-aos="fade-up">
+              <div class="mb-6 flex gap-3">
+                <svg class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <h3 id="rooms-policy-title" class="text-2xl font-bold text-foreground">해남유스호스텔 위약금 규정</h3>
+              </div>
+
+              <div class="rounded-2xl border border-border/60 bg-white p-6 md:p-8">
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                  <article>
+                    <div class="mb-4 flex items-center justify-between border-b border-border/50 pb-4">
+                      <span class="inline-flex items-center gap-2 font-bold text-foreground">
+                        <svg class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        개인
+                      </span>
+                      <span class="text-sm font-medium text-muted-foreground">개별 예약 기준</span>
+                    </div>
+                    <ol class="space-y-3 text-sm leading-relaxed md:text-base">
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">1.</span>
+                        <span class="text-muted-foreground">숙박일 4일전 취소 및 변경 : <span class="font-bold text-foreground">위약금 없음</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">2.</span>
+                        <span class="text-muted-foreground">숙박일 2, 3일전 취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 30%</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">3.</span>
+                        <span class="text-muted-foreground">숙박일 전날 취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 50%</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">4.</span>
+                        <span class="text-muted-foreground">숙박일 당일 취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 80%</span></span>
+                      </li>
+                    </ol>
+                  </article>
+
+                  <article>
+                    <div class="mb-4 flex items-center justify-between border-b border-border/50 pb-4">
+                      <span class="inline-flex items-center gap-2 font-bold text-foreground">
+                        <svg class="h-5 w-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        단체
+                      </span>
+                      <span class="text-sm font-medium text-muted-foreground">단체 예약 기준</span>
+                    </div>
+                    <ol class="space-y-3 text-sm leading-relaxed md:text-base">
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">1.</span>
+                        <span class="text-muted-foreground">사용일 30일전 : <span class="font-bold text-foreground">위약금 없음</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">2.</span>
+                        <span class="text-muted-foreground">사용일 29일전부터 16일전 취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 10%</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">3.</span>
+                        <span class="text-muted-foreground">사용일 15일전부터 8일전 취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 20%</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">4.</span>
+                        <span class="text-muted-foreground">사용일 7일전부터 4일전 취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 50%</span></span>
+                      </li>
+                      <li class="flex gap-3">
+                        <span class="font-bold text-foreground">5.</span>
+                        <span class="text-muted-foreground">사용일 3일전부터 당일취소 및 변경 : <span class="font-bold text-foreground">전체 요금의 100%</span></span>
+                      </li>
+                    </ol>
+                  </article>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div id="panel-facilities-info" role="tabpanel" aria-labelledby="tab-facilities-info" class="hidden">
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <a href="/assets/images/img_facilities_01.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_01.jpg" alt="시설 1" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_02.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_02.jpg" alt="시설 2" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_03.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_03.jpg" alt="시설 3" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_04.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_04.jpg" alt="시설 4" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_05.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_05.jpg" alt="시설 5" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_06.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_06.jpg" alt="시설 6" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_07.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_07.jpg" alt="시설 7" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_08.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_08.jpg" alt="시설 8" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_09.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_09.jpg" alt="시설 9" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_10.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_10.jpg" alt="시설 10" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+              <a href="/assets/images/img_facilities_11.jpg" class="group relative block h-72 overflow-hidden rounded-2xl bg-secondary/30 focus:outline-none focus:ring-2 focus:ring-accent" data-no-swup target="_blank" rel="noopener noreferrer"><img src="/assets/images/img_facilities_11.jpg" alt="시설 11" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" /><div class="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100 group-focus:opacity-100"><span class="font-medium text-white">View</span></div></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

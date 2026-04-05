@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Haenam Youth Hostel — 자연 속 모던 호스텔" />
+    <title>Wanderlust · Haenam Youth Hostel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Pretendard', 'system-ui', 'sans-serif'],
+              heading: ['Outfit', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              border: 'hsl(30 15% 85%)',
+              background: 'hsl(40 20% 96%)',
+              foreground: '#474b53',
+              card: { DEFAULT: 'hsl(40 20% 98%)', foreground: '#474b53' },
+              primary: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              secondary: { DEFAULT: 'rgb(39 141 159 / 0.1)', foreground: 'hsl(30 40% 20%)' },
+              muted: { DEFAULT: 'hsl(35 15% 90%)', foreground: '#666666' },
+              accent: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              destructive: { DEFAULT: 'hsl(0 84.2% 60.2%)', foreground: 'hsl(0 0% 98%)' },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen font-sans bg-background text-foreground selection:bg-accent selection:text-white antialiased">
+    <a href="#swup" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-primary">본문으로 건너뛰기</a>
+    <div id="site-header"></div>
+
+    <main id="swup">
+      <!-- Hero -->
+      <section class="relative h-[88vh] min-h-[620px] w-full overflow-hidden flex items-center justify-center md:h-[100vh] md:min-h-[600px]" aria-labelledby="hero-title">
+        <div class="absolute inset-0 z-0">
+          <div id="hero-bg-slideshow" class="hero-bg-slideshow" aria-hidden="true">                                    
+            <div
+              class="hero-bg-layer hero-bg-layer--active"
+              data-hero-slide
+              style="background-image: url('../assets/images/img_hero3.jpg')"
+            ></div>            
+            <div
+              class="hero-bg-layer hero-bg-layer--active"
+              data-hero-slide
+              style="background-image: url('../assets/images/img_hero2.jpg')"
+            ></div>
+            <div
+              class="hero-bg-layer"
+              data-hero-slide
+              style="background-image: url('../assets/images/img_hero.jpg')"
+            ></div>
+          </div>
+          <div class="absolute inset-0 bg-black/60 pointer-events-none"></div>
+        </div>
+        <div class="relative z-10 container mx-auto px-6 text-center text-white">
+          <span class="mb-8 inline-block rounded-full border border-white/30 bg-white/20 px-3 py-1 text-xs font-medium tracking-wide sm:text-sm md:mb-[3.5rem]" data-aos="fade-down"> EST. 2024 • 해남유스호스텔 </span>
+          <h1 id="hero-title" class="mb-[10px] font-heading text-[1.85rem] font-bold leading-[1.2] tracking-tight text-white sm:text-4xl sm:leading-[1.18] md:text-5xl lg:text-6xl xl:text-[3.5rem] 2xl:text-[4rem] overflow-visible" data-aos="fade-up">
+            해남의 자연 속에서<br />
+            <span class="inline-block bg-gradient-to-r from-amber-100 to-amber-200 bg-clip-text align-baseline leading-[1.35] text-transparent sm:leading-[1.35] overflow-visible">
+              더 깊고 특별한 여행을 경험하세요.
+            </span>
+          </h1>
+          <p class="mx-auto mb-8 max-w-2xl px-1 text-base leading-relaxed font-light text-white/90 sm:mb-10 sm:text-lg md:text-xl" data-aos="fade-up" data-aos-delay="100">
+            해남유스호스텔에서 머무는 순간까지 여행이 되는 곳,<br>해남에서의 특별한 하루를 완성하세요.
+          </p>
+          <div class="flex flex-col gap-3 justify-center sm:flex-row sm:gap-4" data-aos="fade-up" data-aos-delay="200">
+            <a href="about.html" class="inline-flex h-12 items-center justify-center rounded-full bg-accent px-6 text-base font-medium text-accent-foreground transition-colors hover:bg-accent/90 sm:h-14 sm:px-8 sm:text-lg" data-swup-link> 유스호스텔 소개</a>
+            <a href="rooms.html" class="inline-flex h-12 items-center justify-center rounded-full border-2 border-white bg-white/20 px-6 text-base font-medium text-white transition-all hover:bg-white hover:text-primary sm:h-14 sm:px-8 sm:text-lg" data-swup-link> 객실바로가기 </a>
+          </div>
+        </div>
+        <div class="pointer-events-none absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center text-white/70" aria-hidden="true">
+          <div class="hero-scroll-indicator flex flex-col items-center">
+            <span class="mb-2 block text-center text-xs uppercase tracking-widest">Scroll</span>
+            <div class="mx-auto h-12 w-px bg-gradient-to-b from-white to-transparent"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Swiper 예제: 분위기 갤러리 -->
+      <!--
+      <section class="py-12 bg-primary text-primary-foreground" aria-label="공간 스냅 슬라이더">
+        <div class="container mx-auto px-6 mb-6 flex justify-between items-end gap-4">
+          <div>
+            <p class="text-accent font-semibold text-sm uppercase tracking-widest mb-1">Swiper</p>
+            <h2 class="text-2xl md:text-3xl font-heading font-bold">호스텔 무드 보기</h2>
+          </div>
+          <p class="text-sm text-primary-foreground/80 max-w-md hidden sm:block">좌우로 넘겨 보세요. 키보드 화살표로도 이동할 수 있습니다.</p>
+        </div>
+        <div class="swiper swiper-hero-thumb px-6 pb-4" id="home-thumb-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide !h-48 md:!h-64 rounded-2xl overflow-hidden ring-1 ring-white/20">
+              <img src="https://images.unsplash.com/photo-1631049035630-c8568e07d755?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="라운지" width="800" height="533" loading="lazy" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide !h-48 md:!h-64 rounded-2xl overflow-hidden ring-1 ring-white/20">
+              <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="도미토리" width="800" height="533" loading="lazy" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide !h-48 md:!h-64 rounded-2xl overflow-hidden ring-1 ring-white/20">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="개인실" width="800" height="533" loading="lazy" class="h-full w-full object-cover" />
+            </div>
+            <div class="swiper-slide !h-48 md:!h-64 rounded-2xl overflow-hidden ring-1 ring-white/20">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b34?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="숲 주변" width="800" height="533" loading="lazy" class="h-full w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+      //-->
+      
+      <!-- Intro (AOS) -->
+      <section id="about" class="py-24 bg-background" aria-labelledby="intro-heading">
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2" data-aos="fade-right">
+              <span class="text-[#666] font-bold tracking-widest uppercase text-sm mb-[2rem] block">About Haenam Youth Hostel</span>
+              <h2 id="intro-heading" class="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 leading-tight">
+                단순한 숙박을 넘어,<br />
+                <span style="color:#81a66f">함께 머무는 공간</span>
+              </h2>
+              <p class="text-lg text-muted-foreground mb-6 leading-relaxed">
+                해남유스호스텔은 단순한 숙박 공간이 아닌, 자연과 사람, 그리고 경험이 어우러지는 곳입니다.<br />
+                두륜산의 푸른 자연 속에서 편안한 휴식과 다양한 체험을 통해 일상에서 벗어난 진짜 쉼을 제공합니다.
+                여기에서는 머무는 순간조차 하나의 여행이 됩니다.
+              </p>
+            </div>
+            <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-8" data-aos="fade-left" data-aos-delay="100">
+              <div class="flex gap-4 p-6 rounded-2xl bg-card border border-[rgb(39,141,159/0.3)] hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+                <div class="shrink-0 p-3 rounded-full bg-accent/10 h-fit text-accent" aria-hidden="true">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-foreground mb-2">함께하는 즐거움</h3>
+                  <p class="text-muted-foreground">다양한 사람들과 교류하며 잊지 못할 추억을 만들어보세요!</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-6 rounded-2xl bg-card border border-[rgb(39,141,159/0.3)] hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+                <div class="shrink-0 p-3 rounded-full bg-accent/10 h-fit text-accent" aria-hidden="true">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-foreground mb-2">자연 속 진짜 휴식</h3>
+                  <p class="text-muted-foreground">조용하고 아늑한 공간에서 몸과 마음을 모두 쉬어가세요!</p>
+                </div>
+              </div>
+              <div class="flex gap-4 p-6 rounded-2xl bg-card border border-[rgb(39,141,159/0.3)] hover:border-accent/30 hover:shadow-lg transition-all duration-300">
+                <div class="shrink-0 p-3 rounded-full bg-accent/10 h-fit text-accent" aria-hidden="true">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-foreground mb-2">자연을 느끼는 시간</h3>
+                  <p class="text-muted-foreground">해남의 자연과 함께하는 다양한 체험 프로그램을 경험하세요!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rooms teaser -->
+      <section id="rooms" class="py-24 bg-primary/10" aria-labelledby="rooms-heading">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <span class="text-[#666] font-bold tracking-widest uppercase text-sm mb-8 block" data-aos="fade-up">Places to Stay</span>
+            <h2 id="rooms-heading" class="text-4xl md:text-5xl font-heading font-bold text-primary mb-4" data-aos="fade-up" data-aos-delay="50">머무는 순간까지 편안하게</h2>
+            <p class="text-muted-foreground max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">자연과 어우러진 공간에서 편안하고 쾌적한 휴식을 경험하세요.</p>
+          </div>
+          <div class="relative -mx-2 px-2 md:-mx-4 md:px-4" data-aos="fade-up" data-aos-delay="140">
+            <div class="flex items-center gap-2 md:gap-3">
+              <div
+                class="swiper-button-prev swiper-button-prev-rooms swiper-rooms-nav shrink-0 max-md:scale-90"
+                id="home-rooms-prev"
+                aria-label="이전 객실"
+              ></div>
+              <div class="min-w-0 flex-1 overflow-hidden">
+                <div class="swiper swiper-rooms-teaser" id="home-rooms-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide h-auto">
+            <article class="border-none shadow-md overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 group h-full flex flex-col bg-card">
+              <div class="relative h-64 overflow-hidden">
+                <img src="/assets/images/img_room_a.jpg" alt="Mixed Dormitory" width="900" height="600" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute top-4 right-4 rounded-full bg-white/90 text-primary font-bold text-sm px-3 py-1">Rooms</div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <div class="flex justify-between items-start gap-4 mb-8">
+                  <h3 class="text-2xl font-bold font-heading">숙소 A</h3>
+                  <div class="text-right shrink-0">
+                    <span class="block text-2xl font-bold text-accent">22.75㎡</span>
+                  </div>
+                </div>
+                <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4">
+                  <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  6 인실
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">에어컨</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">TV</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">냉장고</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">옷장</span> 
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">드라이기</span> 
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">샤워실</span>
+                </div>
+                <a href="rooms.html" class="mt-auto inline-flex justify-center rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 text-center transition-colors" data-swup-link>바로가기</a>
+              </div>
+            </article>
+                </div>
+                <div class="swiper-slide h-auto">
+            <article class="border-none shadow-md overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 group h-full flex flex-col bg-card">
+              <div class="relative h-64 overflow-hidden">
+                <img src="/assets/images/img_room_b.jpg" alt="Female Dormitory" width="900" height="600" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute top-4 right-4 rounded-full bg-white/90 text-primary font-bold text-sm px-3 py-1">Rooms</div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <div class="flex justify-between items-start gap-4 mb-8">
+                  <h3 class="text-2xl font-bold font-heading">숙소 B</h3>
+                  <div class="text-right shrink-0">
+                    <span class="block text-2xl font-bold text-accent">33㎡</span>
+                  </div>
+                </div>
+                <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4">
+                  <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  4 인실
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">에어컨</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">TV</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">냉장고</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">옷장</span> 
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">드라이기</span> 
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">샤워실</span>
+                </div>
+                <a href="rooms.html" class="mt-auto inline-flex justify-center rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 text-center transition-colors" data-swup-link>바로가기</a>
+              </div>
+            </article>
+                </div>
+                <div class="swiper-slide h-auto">
+            <article class="border-none shadow-md overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 group h-full flex flex-col bg-card">
+              <div class="relative h-64 overflow-hidden">
+                <img src="/assets/images/img_room_c.jpg" alt="Private Double" width="900" height="600" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute top-4 right-4 rounded-full bg-white/90 text-primary font-bold text-sm px-3 py-1">Rooms</div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <div class="flex justify-between items-start gap-4 mb-8">
+                  <h3 class="text-2xl font-bold font-heading">숙소 C</h3>
+                  <div class="text-right shrink-0">
+                    <span class="block text-2xl font-bold text-accent">19.25㎡</span>
+                  </div>
+                </div>
+                <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4">
+                  <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  3 인실
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">에어컨</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">TV</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">냉장고</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">옷장</span> 
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">드라이기</span> 
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">샤워실</span>
+                </div>
+                <a href="rooms.html" class="mt-auto inline-flex justify-center rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 text-center transition-colors" data-swup-link>바로가기</a>
+              </div>
+            </article>
+                </div>
+                <div class="swiper-slide h-auto">
+            <article class="border-none shadow-md overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 group h-full flex flex-col bg-card">
+              <div class="relative h-64 overflow-hidden">
+                <img src="/assets/images/img_room_d.jpg" alt="Family Room" width="900" height="600" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div class="absolute top-4 right-4 rounded-full bg-white/90 text-primary font-bold text-sm px-3 py-1">Rooms</div>
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <div class="flex justify-between items-start gap-4 mb-8">
+                  <h3 class="text-2xl font-bold font-heading">숙소 D</h3>
+                  <div class="text-right shrink-0">
+                    <span class="block text-2xl font-bold text-accent">42㎡</span>
+                  </div>
+                </div>
+                <p class="text-sm text-muted-foreground flex items-center gap-2 mb-4">
+                  <svg class="h-4 w-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  가족실 (최대 5인)
+                </p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">에어컨</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">TV</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">냉장고</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">옷장</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">드라이기</span>
+                  <span class="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">욕실</span>
+                </div>
+                <a href="rooms.html" class="mt-auto inline-flex justify-center rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-3 text-center transition-colors" data-swup-link>바로가기</a>
+              </div>
+            </article>
+                </div>
+              </div>
+                  <div class="swiper-pagination swiper-pagination-rooms !static mt-8"></div>
+                </div>
+              </div>
+              <div
+                class="swiper-button-next swiper-button-next-rooms swiper-rooms-nav shrink-0 max-md:scale-90"
+                id="home-rooms-next"
+                aria-label="다음 객실"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 공지/이벤트 안내 (Notice Cards) -->
+      <section id="notice" class="py-24 bg-background" aria-label="notice-heading">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <span class="text-[#666] font-bold tracking-widest uppercase text-sm mb-8 block" data-aos="fade-up">Notice & Event</span>
+            <h2 id="notice-heading" class="text-4xl md:text-5xl font-heading font-bold text-primary mb-4" data-aos="fade-up" data-aos-delay="50">공지/이벤트 안내</h2>
+            <p class="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">
+              해남유스호스텔의 다양한 소식과 새로운 소식을 만나보세요.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <article class="bg-card rounded-2xl shadow-md p-8 hover:shadow-xl transition-shadow" data-aos="fade-up">
+              <div class="flex items-center justify-between gap-4 mb-5">
+                <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold tracking-widest text-primary">
+                  공지사항
+                </span>
+                <span class="text-sm text-muted-foreground shrink-0">2026.03.20</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-foreground leading-snug mb-3">
+                2026 해남유스호스텔 여름 창의캠프 참가자 모집
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                자연 속에서 배우고 성장하는 4주간의 창의캠프가 시작됩니다. 다양한 체험활동과 공동체 프로그램을 통해 특별한 여름을 만들어보세요.
+              </p>
+            </article>
+
+            <article class="bg-card rounded-2xl shadow-md p-8 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="60">
+              <div class="flex items-center justify-between gap-4 mb-5">
+                <span class="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-bold tracking-widest text-accent">
+                  이벤트
+                </span>
+                <span class="text-sm text-muted-foreground shrink-0">2026.03.15</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-foreground leading-snug mb-3">
+                디지털 체험실 신규 장비 도입 안내
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                해남유스호스텔 체험 프로그램 강화를 위해 최신 디지털 장비와 창작 도구가 새롭게 도입되었습니다. 다양한 창의 활동을 직접 경험해보세요.
+              </p>
+            </article>
+
+            <article class="bg-card rounded-2xl shadow-md p-8 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="120">
+              <div class="flex items-center justify-between gap-4 mb-5">
+                <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold tracking-widest text-primary">
+                  이벤트
+                </span>
+                <span class="text-sm text-muted-foreground shrink-0">2026.03.10</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-foreground leading-snug mb-3">
+                청소년 리더십 캠프 참가자 모집
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                전국 청소년들이 함께하는 리더십 캠프가 열립니다. 팀워크와 소통을 배우며 스스로 성장하는 시간을 만나보세요.
+              </p>
+            </article>
+
+            <article class="bg-card rounded-2xl shadow-md p-8 hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="180">
+              <div class="flex items-center justify-between gap-4 mb-5">
+                <span class="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-bold tracking-widest text-accent">
+                  공지사항
+                </span>
+                <span class="text-sm text-muted-foreground shrink-0">2026.03.05</span>
+              </div>
+              <h3 class="text-xl font-heading font-bold text-foreground leading-snug mb-3">
+                자연과 함께하는 벽화 프로젝트 참여 안내
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                해남유스호스텔 내 공간을 함께 꾸미는 벽화 프로젝트가 진행됩니다. 누구나 참여 가능하며, 창의적인 아이디어를 자유롭게 표현해보세요.
+              </p>
+            </article>
+          </div>
+
+          <div class="flex justify-center mt-10">
+            <a
+              href="community.html"
+              class="inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/90"
+              data-swup-link
+            >
+              공지사항 바로가기
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 오시는 길 · 연락처 -->
+      <section id="contact-map" class="bg-background" aria-labelledby="contact-map-heading">
+        <div class="flex flex-col lg:flex-row lg:min-h-[420px] lg:items-stretch">
+          <div
+            class="relative w-full lg:flex-[1.65] min-h-[280px] sm:min-h-[340px] lg:min-h-0"
+            data-aos="fade-right"
+          >
+            <iframe
+              title="해남유스호스텔 위치"
+              class="contact-map-frame absolute inset-0 h-full w-full border-0"
+              src="https://maps.google.com/maps?q=%EC%A0%84%EB%82%A8%ED%8A%B9%EB%B3%84%EC%9E%90%EC%B9%99%EB%8F%84+%ED%95%B4%EB%82%A8%EA%B5%B0+%EB%91%90%EB%A5%9C%EC%82%B0&hl=ko&z=13&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <aside
+            class="flex w-full flex-col justify-center border-t border-border/80 bg-primary/10 px-8 py-12 sm:px-10 sm:py-14 lg:flex-1 lg:border-l lg:border-t-0 lg:px-12 lg:py-16"
+            data-aos="fade-left"
+            data-aos-delay="80"
+          >
+            <span class="text-[#666] mb-3 block text-sm font-bold uppercase tracking-widest mb-8">Contact</span>
+            <h2 id="contact-map-heading" class="font-heading text-3xl font-bold leading-tight text-primary sm:text-4xl">
+              해남유스호스텔에 오시는 길을<br class="hidden sm:inline" />
+              안내드립니다.
+            </h2>
+            <p class="mt-4 max-w-lg text-muted-foreground">문의 또는 방문 전 연락 주시면 보다 편안하게 모시겠습니다.</p>
+            <dl class="mt-10 space-y-4 text-sm sm:text-base">
+              <div
+                class="flex gap-4 rounded-2xl border border-[rgb(39_141_159/0.35)] bg-card p-5 shadow-sm transition-shadow duration-300 hover:border-accent/40 hover:shadow-md"
+              >
+                <div class="shrink-0 self-start rounded-full bg-accent/10 p-3 text-accent" aria-hidden="true">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <dt class="mb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">주소</dt>
+                  <dd class="text-foreground leading-relaxed">전남 해남군 삼산면 대흥사길 88-88</dd>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 rounded-2xl border border-[rgb(39_141_159/0.35)] bg-card p-5 shadow-sm transition-shadow duration-300 hover:border-accent/40 hover:shadow-md"
+              >
+                <div class="shrink-0 self-start rounded-full bg-accent/10 p-3 text-accent" aria-hidden="true">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    />
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <dt class="mb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">TEL</dt>
+                  <dd>
+                    <a href="tel:0611234567" class="font-medium text-primary underline-offset-2 transition-colors hover:text-primary/80 hover:underline"
+                      >061-123-4567</a
+                    >
+                  </dd>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 rounded-2xl border border-[rgb(39_141_159/0.35)] bg-card p-5 shadow-sm transition-shadow duration-300 hover:border-accent/40 hover:shadow-md"
+              >
+                <div class="shrink-0 self-start rounded-full bg-accent/10 p-3 text-accent" aria-hidden="true">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="2" y="6" width="20" height="12" rx="2" />
+                    <path d="M6 10h.01M10 10h.01M14 10h.01" />
+                    <path d="M6 14h12" />
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <dt class="mb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">FAX</dt>
+                  <dd class="text-foreground">061-123-4568</dd>
+                </div>
+              </div>
+              <div
+                class="flex gap-4 rounded-2xl border border-[rgb(39_141_159/0.35)] bg-card p-5 shadow-sm transition-shadow duration-300 hover:border-accent/40 hover:shadow-md"
+              >
+                <div class="shrink-0 self-start rounded-full bg-accent/10 p-3 text-accent" aria-hidden="true">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div class="min-w-0 flex-1">
+                  <dt class="mb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">E-MAIL</dt>
+                  <dd>
+                    <a
+                      href="mailto:jangcw1@hanmail.net"
+                      class="font-medium text-primary underline-offset-2 transition-colors hover:text-primary/80 hover:underline break-all"
+                      >jangcw1@hanmail.net</a
+                    >
+                  </dd>
+                </div>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 · Page Not Found</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Pretendard', 'system-ui', 'sans-serif'], heading: ['Outfit', 'system-ui', 'sans-serif'] },
+            colors: {
+              border: 'hsl(30 15% 85%)',
+              background: 'hsl(40 20% 96%)',
+              foreground: '#474b53',
+              primary: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+              muted: { DEFAULT: 'hsl(35 15% 90%)', foreground: '#666666' },
+              accent: { DEFAULT: '#278D9F', foreground: '#FFFFFF' },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-background antialiased">
+    <div id="site-header"></div>
+    <main id="swup" class="flex-grow flex items-center justify-center px-6 py-24">
+      <div class="w-full max-w-md rounded-2xl border border-border bg-card p-8 shadow-sm text-center" role="alert">
+        <div class="flex justify-center mb-4 gap-2 text-red-600">
+          <svg class="h-10 w-10 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <h1 class="text-2xl font-heading font-bold text-foreground">404 Page Not Found</h1>
+        </div>
+        <p class="mt-4 text-sm text-muted-foreground leading-relaxed">요청하신 페이지가 없습니다. 주소를 확인하거나 홈으로 이동해 주세요.</p>
+        <a href="index.html" class="mt-8 inline-flex rounded-full bg-primary text-primary-foreground px-6 py-3 font-medium hover:bg-primary/90 transition-colors" data-swup-link>홈으로</a>
+      </div>
+    </main>
+    <div id="site-footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/swup@4/dist/Swup.umd.js"></script>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>
