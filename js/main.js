@@ -129,6 +129,56 @@ function setRoomsTab(name) {
   if (indFacilities) indFacilities.classList.toggle('hidden', isRooms);
 }
 
+function initNoticePagination() {
+  const panelNotice = document.getElementById('panel-notice');
+  if (!panelNotice) return;
+
+  const items = Array.from(panelNotice.querySelectorAll('[data-notice-item]'));
+  const prevBtn = document.getElementById('notice-prev');
+  const firstBtn = document.getElementById('notice-first');
+  const nextBtn = document.getElementById('notice-next');
+  if (!items.length || !prevBtn || !firstBtn || !nextBtn) return;
+
+  const pageSize = 10;
+  const totalPages = Math.max(1, Math.ceil(items.length / pageSize));
+  let currentPage = 0;
+
+  const renderPage = () => {
+    const start = currentPage * pageSize;
+    const end = start + pageSize;
+
+    items.forEach((item, index) => {
+      item.classList.toggle('hidden', index < start || index >= end);
+    });
+
+    const atFirstPage = currentPage === 0;
+    const atLastPage = currentPage >= totalPages - 1;
+    prevBtn.disabled = atFirstPage;
+    firstBtn.disabled = atFirstPage;
+    nextBtn.disabled = atLastPage;
+  };
+
+  prevBtn.onclick = () => {
+    if (currentPage <= 0) return;
+    currentPage -= 1;
+    renderPage();
+  };
+
+  firstBtn.onclick = () => {
+    if (currentPage === 0) return;
+    currentPage = 0;
+    renderPage();
+  };
+
+  nextBtn.onclick = () => {
+    if (currentPage >= totalPages - 1) return;
+    currentPage += 1;
+    renderPage();
+  };
+
+  renderPage();
+}
+
 let delegatedInited = false;
 
 function bindDelegatedOnce() {
@@ -163,6 +213,7 @@ function initPage() {
   refreshAos();
   updateHeaderCompact();
   initHeroBgSlideshow();
+  initNoticePagination();
 }
 
 let swup;
